@@ -14,8 +14,7 @@ services:
     environment:
       NODE_ENV: production
     ports:
-      - 8000:8000
-
+      - 3000:3000
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
 # start the database before your application. The `db-data` volume persists the
@@ -48,4 +47,16 @@ services:
 # secrets:
 #   db-password:
 #     file: db/password.txt
+
+services:
+  semaphore:
+    ports:
+      - 9000:9000
+    image: semaphoreui/semaphore:latest
+    environment:
+      SEMAPHORE_DB_DIALECT: bolt
+      SEMAPHORE_ADMIN_PASSWORD: changeme
+      SEMAPHORE_ADMIN_NAME: admin
+      SEMAPHORE_ADMIN_EMAIL: admin@localhost
+      SEMAPHORE_ADMIN: admin
 
