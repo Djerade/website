@@ -5,6 +5,7 @@ pipeline {
     //         args '-p 4000:4000' 
     //     }
     // }
+    agent any
     stages {
         stage('Cloner le dépôt') {
             steps {
