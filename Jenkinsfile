@@ -1,10 +1,10 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:20.11.1-alpine3.19' 
-            args '-p 3000:3000' 
-        }
-    }
+    // agent {
+    //     docker {
+    //         image 'node:20.11.1-alpine3.19' 
+    //         args '-p 4000:4000' 
+    //     }
+    // }
     stages {
         stage('Cloner le dépôt') {
             steps {
