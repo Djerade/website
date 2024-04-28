@@ -6,6 +6,11 @@ pipeline {
                 git 'https://github.com/Djerade/website.git'
             }
         }
+        stage('checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Installer les dépendances') {
             steps {
                 sh 'sudo apt install'
