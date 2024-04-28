@@ -13,13 +13,13 @@ pipeline {
         }
         stage('Installer les dépendances') {
             steps {
-                sh 'sudo apt install npm'
+                bat 'npm install'
             }
         }
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
         stage('Test') {
